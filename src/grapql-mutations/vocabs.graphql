@@ -1,0 +1,13 @@
+mutation CreateVocab($data: VocabCreateInput!) {
+  createVocab(data: $data) {
+    id
+    word
+    meaning
+  }
+}
+
+mutation publishVocab($id: ID) {
+  publishVocab(where: { id: $id }, to: PUBLISHED) {
+    id
+  }
+}
